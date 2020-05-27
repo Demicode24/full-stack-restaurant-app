@@ -25,6 +25,14 @@ Route::get('/admin/food-catergories', function () {
     return view('admin/food-catergories/all');
 });
 
+Route::get('/admin/food-catergories/create', function () {
+    return view('admin/food-catergories/create');
+});
+
+Route::get('/admin/food-catergories/edit', function () {
+    return view('admin/food-catergories/edit');
+});
+
 Route::get('/admin/register', function () {
     return view('admin/register');
 });
