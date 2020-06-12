@@ -22,7 +22,7 @@ Route::get('/menu/{slug}', 'StaticPagesController@singleMenu');
 
 Route::get('/about', 'StaticPagesController@about');
 
-Route::get('/waitlist', 'StaticPagesController@waitlist');
+Route::get('/reservations', 'StaticPagesController@reservations');
 
 Route::get('/contact', 'StaticPagesController@contact');
 
@@ -35,6 +35,13 @@ Route::get('/admin', 'admin\AdminController@dashboard');
 Route::get('/admin/food-catergories', 'admin\FoodCategoriesController@index');
 
 Route::get('/admin/food-catergories/create', 'admin\FoodCategoriesController@create');
+
+Route::get('/admin/food-catergories/{}/edit', 'admin\FoodCategoriesController@edit');
+
+//admin Customers
+Route::get('/admin/offers-members', 'admin\CustomersController@allOffersMembers');
+
+Route::get('/admin/reservations', 'admin\CustomersController@allReservations');
 
 Route::get('/admin/food-catergories/{}/edit', 'admin\FoodCategoriesController@edit');
 
