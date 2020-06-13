@@ -38,6 +38,13 @@ Route::get('/admin/food-catergories/create', 'admin\FoodCategoriesController@cre
 
 Route::get('/admin/food-catergories/{}/edit', 'admin\FoodCategoriesController@edit');
 
+//admin users
+Route::get('/admin/users', 'admin\UsersController@index');
+
+Route::get('/admin/users/create', 'admin\UsersController@create');
+
+Route::get('/admin/users/{}/edit', 'admin\UsersController@edit');
+
 //admin Customers
 Route::get('/admin/offers-members', 'admin\CustomersController@allOffersMembers');
 
