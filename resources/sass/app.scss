@@ -1,23 +1,14 @@
-// // Fonts
-// @import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// // Variables
-// @import 'variables';
-
-// // Bootstrap
-// @import '~bootstrap/scss/bootstrap';
-
-//
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
 @import "bootstrap.min.css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;900&display=swap');
 @import "reset";
-@import "home";
-@import "menu/index";
-@import "menu/single-menu";
 @import "pages/about";
+@import "pages/contact";
 @import "pages/waitlist";
 @import "pages/offers";
+@import "menu/index";
+@import "menu/single-menu";
+@import "home";
 
 body {
     line-height: 1;
@@ -43,8 +34,7 @@ q:before {
 }
 
 p {
-    font-family: 'Montserrat',
-        sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 table {
@@ -61,32 +51,6 @@ body {
     // grid-template-columns: 350px 1fr;
     width: 100%;
     height: 100vh;
-
-    #content-section {
-        transform: translate3d(300px, 0, 0);
-        max-width: calc(100vw - 300px);
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        // flex-direction: column;
-        background: #ed4852;
-        /* Old browsers */
-        background: -moz-radial-gradient(center,
-                ellipse cover,
-                #ed4852 0%,
-                #9c1b24 100%);
-        /* FF3.6-15 */
-        background: -webkit-radial-gradient(center,
-                ellipse cover,
-                #ed4852 0%,
-                #9c1b24 100%);
-        /* Chrome10-25,Safari5.1-6 */
-        background: radial-gradient(ellipse at center,
-                #ed4852 0%,
-                #9c1b24 100%);
-        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        // overflow: hidden;
-    }
 
     .side-menu {
         position: absolute;
@@ -158,7 +122,7 @@ body {
         .location {
             align-self: center;
             position: absolute;
-            margin-bottom: 49px;
+            bottom: 100px;
 
             .address {
                 color: #7a8d99;
@@ -175,6 +139,28 @@ body {
                 }
             }
         }
+    }
+
+    #content-section {
+        transform: translate3d(300px, 0, 0);
+        max-width: calc(100vw - 300px);
+        background: #ed4852;
+        /* Old browsers */
+        background: -moz-radial-gradient(center,
+                ellipse cover,
+                #ed4852 0%,
+                #9c1b24 100%);
+        /* FF3.6-15 */
+        background: -webkit-radial-gradient(center,
+                ellipse cover,
+                #ed4852 0%,
+                #9c1b24 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at center,
+                #ed4852 0%,
+                #9c1b24 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        // overflow: hidden;
     }
 }
 
@@ -323,6 +309,7 @@ body {
         .sliding-system {
             white-space: nowrap;
             transform: translate3d(-0%, 0, 0);
+            transition: all .3s ease-in-out;
         }
 
         .slide {
@@ -402,7 +389,7 @@ h2 {
     margin-bottom: 3rem;
 }
 
-// Small devices (landscape phones, 576px and up)
+//small devices
 @media (min-width: 0px) and (max-width: 767px) {
     h2 {
         font-size: 2rem;
@@ -412,7 +399,7 @@ h2 {
 
     #app-layout {
         .side-menu {
-            transform: translate3d(-300px, 0, 0)
+            transform: translate3d(-300px, 0, 0);
         }
 
         .welcome-jumbo {
@@ -428,7 +415,6 @@ h2 {
             padding: 20px;
             overflow-y: scroll;
             transform: translate3d(0, 0, 0);
-
         }
     }
 
@@ -457,20 +443,33 @@ h2 {
 
     #food-preview {
         width: 100%;
-        overflow: hidden;
+        overflow: auto;
         padding: 20px;
 
+        .food-slider {
+            .slide {
+                margin-bottom: 1rem;
+            }
+
+            .sliding-system {
+                white-space: normal;
+                transform: translate3d(-0%, 0, 0);
+            }
+        }
+
         .button-rounded {
-            margin-bottom: .8rem;
+            margin-bottom: 2rem;
         }
 
         .container {
             .left-btn {
                 left: -20px;
+                display: none;
             }
 
             .right-btn {
                 right: -20px;
+                display: none;
             }
         }
 
@@ -487,11 +486,6 @@ h2 {
     }
 }
 
-.content-box {
-    background: #fff;
-    padding: 20px;
-}
-
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991px) {
     #app-layout {
@@ -502,7 +496,7 @@ h2 {
         .welcome-jumbo {
             width: 100%;
             max-width: 100vw;
-            // padding: 20px;
+            padding: 20px;
             transform: translate3d(0, 0, 0);
         }
 
@@ -512,7 +506,6 @@ h2 {
             padding: 20px;
             overflow-y: scroll;
             transform: translate3d(0, 0, 0);
-
         }
     }
 
@@ -530,17 +523,19 @@ h2 {
             }
 
             .paragraphs {
-                grid-template-columns: 1fr;
+                grid-template-columns: 50% 50%;
             }
         }
     }
 
     #food-preview {
         width: 100%;
-        overflow: hidden;
+        // overflow: auto;
         padding: 20px;
 
-        margin-bottom: .8rem;
+        .button-rounded {
+            margin-bottom: 2rem;
+        }
 
         .container {
             .left-btn {
@@ -564,6 +559,13 @@ h2 {
         }
     }
 }
+
+.content-box {
+    background: white;
+    padding: 20px;
+}
+
+
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199px) {}
